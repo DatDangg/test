@@ -29,8 +29,6 @@ public class FavoriteListAdapter extends RecyclerView.Adapter<FavoriteListAdapte
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        // TODO: Hiển thị thông tin phim dựa trên ID phim từ danh sách yêu thích
-
         // Ví dụ: hiển thị ID phim làm tên phim
         int movieId = favoriteMovieIds.get(position);
         holder.textViewMovieTitle.setText("Movie " + movieId);
@@ -46,7 +44,7 @@ public class FavoriteListAdapter extends RecyclerView.Adapter<FavoriteListAdapte
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-                textViewMovieTitle = itemView.findViewById(R.id.title1);
+                textViewMovieTitle = itemView.findViewById(R.id.fvTV);
         }
     }
 }

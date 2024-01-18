@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ScrollView;
@@ -36,10 +37,16 @@ public class FavoriteActivity extends AppCompatActivity {
 //        scrollView = findViewById(R.id.scrollView3);
 
 //        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+        recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
 //
         // Lấy danh sách phim yêu thích từ Intent
         List<Integer> favoriteMovies = getIntent().getIntegerArrayListExtra("favoriteMovies");
+
+        if (favoriteMovies != null) {
+            Log.d("FavoriteActivity", "Favorite Movies: " + favoriteMovies.toString());
+        } else {
+            Log.e("FavoriteActivity", "Favorite Movies is null");
+        }
 
 //         Khởi tạo adapter và thiết lập RecyclerView
         recyclerView.setAdapter(new FavoriteListAdapter(favoriteMovies));

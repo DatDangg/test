@@ -51,7 +51,11 @@ public class MainActivity extends AppCompatActivity {
 
     private void sendRequestFavorite() {
         LinearLayout favBtn = findViewById(R.id.FavBTN);
-        favBtn.setOnClickListener(v -> startActivity(new Intent(MainActivity.this,FavoriteActivity.class)));
+//        favBtn.setOnClickListener(v -> startActivity(new Intent(MainActivity.this,FavoriteActivity.class)));
+        favBtn.setOnClickListener(v -> {
+            Log.d("MainActivity", "FavBtn clicked");
+            startActivity(new Intent(MainActivity.this, FavoriteActivity.class));
+        });
     }
 
     private void sendRequestBestMovies() {
